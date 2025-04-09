@@ -1,0 +1,32 @@
+-mcpu=cortex-m4 -T"/home/amargan/work/code/firmware/bl-stm32f4xx-ecat/stm32f407/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="${BuildArtifactFileBaseName}.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+-mcpu=cortex-m4 -T"/home/amargan/work/code/firmware/bl-stm32f4xx-ecat/stm32f446/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="${BuildArtifactFileBaseName}.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+
+-mcpu=cortex-m4 -std=gnu17 -g3 -DDEBUG -DESC_DEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/amargan/work/code/firmware/SOES" -I"/home/amargan/work/code/firmware/bl-stm32f4xx-ecat/include" -I"/home/amargan/work/code/firmware/SOES/soes/include/sys/gcc/" -O0 -ffunction-sections -fdata-sections -Wall -Wextra -Wswitch-default -fstack-usage -fcyclomatic-complexity --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb
+-mcpu=cortex-m4 -std=gnu17 -g3 -DDEBUG -DESC_DEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/amargan/work/code/firmware/SOES/soes/include/sys/gcc" -I"/home/amargan/work/code/firmware/SOES/" -I"/home/amargan/work/code/firmware/bl-stm32f4xx-ecat/include" -O0 -ffunction-sections -fdata-sections -Wall -Wextra -Wswitch-default -fstack-usage -fcyclomatic-complexity --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb
+
+
+https://www.redhat.com/en/blog/linkers-warnings-about-executable-stacks-and-segments
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x001000 0x08000000 0x08000000 0x0ab58 0x0ab58 R E 0x1000
+  LOAD           0x00c000 0x20000000 0x0800ab58 0x00328 0x00e08 RWE 0x1000
+  LOAD           0x000e08 0x20000e08 0x0800ae80 0x00000 0x00600 RW  0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .isr_vector .text .rodata .ARM .init_array .fini_array 
+   01     .data .bss 
+   02     ._user_heap_stack 
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x001000 0x08000000 0x08000000 0x0a6d0 0x0a6d0 R E 0x1000
+  LOAD           0x00c000 0x20000000 0x0800a6d0 0x00328 0x00328 R E 0x1000
+  LOAD           0x000328 0x20000328 0x20000328 0x00000 0x010e0 RW  0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .isr_vector .text .rodata .ARM .init_array .fini_array 
+   01     .data 
+   02     .bss ._user_heap_stack
