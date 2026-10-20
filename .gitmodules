@@ -1,0 +1,8 @@
+[submodule "external/soes"]
+	path = external/soes
+	url = https://github.com/alessiomargan/SOES.git
+	branch = main_advr
+[submodule "external/bl-stm32f4xx-ecat"]
+	path = external/bl-stm32f4xx-ecat
+	url = https://github.com/alessiomargan/bl-stm32f4xx-ecat.git
+	branch = main

@@ -1,2 +1,15 @@
-
+# Build products
+build/
 Debug/
+Release/
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.su
+*.cyclo
+
+# Keep the convenience Makefile even with a global ignore rule.
+!/Makefile
